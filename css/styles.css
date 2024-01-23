@@ -183,6 +183,22 @@ img {
   gap: 40px;
 }
 
+@media screen and (min-width: 768px) {
+  .address-list {
+    flex-direction: column;
+    gap: 12px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .address-list {
+    flex-direction: row;
+    gap: 40px;
+    font-size: 16px;
+  }
+}
+
 .address-links {
   color: var(--SLATE, #434455);
   font-size: 16px;
@@ -674,13 +690,43 @@ img {
   background-color: var(--NAVY-BLUE, #2e2f42);
 }
 
-.footer-container {
-  margin-right: 120px;
-}
-
 .footer-block {
   display: flex;
-  align-items: baseline;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-block {
+    flex-direction: row;
+    padding-left: 108px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer-block {
+    padding-left: 15px;
+  }
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 72px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-container {
+    width: 264px;
+    margin-right: 24px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer-container {
+    margin-right: 120px;
+    margin-bottom: 0;
+  }
 }
 
 /* #region Logo start */
@@ -694,7 +740,14 @@ img {
   text-transform: uppercase;
 
   display: inline-block;
-  margin-bottom: 16px;
+  margin: 0 auto;
+  margin-bottom: 17.5px;
+}
+
+@media only screen and (min-width: 768px) {
+  .lower-logo {
+    margin-left: 0;
+  }
 }
 
 .logo-span-footer {
@@ -721,11 +774,25 @@ img {
   letter-spacing: 0.02em;
 
   margin-left: 0;
-  margin-right: 80px;
+  margin-bottom: 72px;
+}
+
+@media only screen and (min-width: 1158px) {
+  .socials {
+    margin-right: 80px;
+    margin-bottom: 0;
+  }
 }
 
 .social-media-text {
   margin-bottom: 16px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .social-media-text {
+    text-align: left;
+  }
 }
 
 .icon-socials-container {
@@ -749,11 +816,37 @@ img {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .mwf-text {
+    text-align: left;
+  }
 }
 
 .mwf-form {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .mwf-form {
+    flex-direction: row;
+    align-items: start;
+    gap: 24px;
+  }
+}
+
+.mwf-label {
+  margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .mwf-label {
+    margin-bottom: 0;
+  }
 }
 
 .mwf-input {
@@ -776,7 +869,7 @@ img {
 }
 
 .btn-mwf {
-  min-width: 165px;
+  width: 165px;
   height: 40px;
   padding: 8px 24px;
   display: flex;
@@ -835,7 +928,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 408px;
+  width: 288px;
   min-height: 584px;
   background-color: #fcfcfc;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
@@ -843,7 +936,14 @@ img {
   border-radius: 4px;
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 72px 24px 24px 24px;
+  padding: 72px 16px 24px 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .modal-window {
+    width: 408px;
+    padding: 72px 24px 24px 24px;
+  }
 }
 
 .btn-mw-close {
@@ -1030,3 +1130,69 @@ img {
   background-color: #404bbf;
 }
 /* #endregion Backdrop end */
+
+/* #region Backdrop header menu */
+.backdrop-header-menu {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 72px 24px 40px 16px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop-header-menu.bckd-hm-is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.icons-mobile-list {
+  display: flex;
+  gap: 40px;
+}
+
+.hm-list {
+  margin-bottom: 168px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.hw-list-link {
+  color: #2e2f42;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.hm-links-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  margin-bottom: 48px;
+}
+
+.hm-list-links-item {
+  color: #434455;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  font-style: normal;
+}
+
+.add-color {
+  color: #404bbf;
+}
+/* #endregion Backdrop header menu */
